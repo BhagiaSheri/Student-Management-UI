@@ -24,9 +24,16 @@ code {
   cursor: pointer;
 }
 
-.Product {
+.Student {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+.SelectedStudent{
+  display: flex;
   justify-content: center;
   width: 80%;
   margin: auto;

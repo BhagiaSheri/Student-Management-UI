@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-// import logo from '../../assets/logos/miu-logo.png';
+import {Link} from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
@@ -9,15 +8,14 @@ const Header = () => {
         <header>
             <nav>
                 <ul>
-                    <li> Students </li>
-                    <li> Add Students </li>
-                    <li> Selected Students </li>
+                    <li><Link to="/students">Students</Link></li>
+                    <li><Link to="add-student"> Add Students</Link></li>
+                    <li><Link to="selected-students">Selected Students</Link></li>
                 </ul>
             </nav>
         </header>
     );
 }
-
 
 
 export default Header;

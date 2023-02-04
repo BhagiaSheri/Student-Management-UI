@@ -1,4 +1,4 @@
-.NewProduct {
+.NewStudent {
     width: 80%;
     margin: 20px auto;
     border: 1px solid #eee;
@@ -6,16 +6,16 @@
     text-align: center;
 }
 
-.NewProduct label {
+.NewStudent label {
     display: block;
     margin: 10px auto;
     text-align: center;
     font-weight: bold;
 }
 
-.NewProduct input,
-.NewProduct textarea,
-.NewProduct select {
+.NewStudent input,
+.NewStudent textarea,
+.NewStudent select {
     display: block;
     width: 80%;
     box-sizing: border-box;
@@ -25,7 +25,7 @@
     margin: auto;
 }
 
-.NewProduct button {
+.NewStudent button {
     margin: 5px 0;
     padding: 10px;
     font: inherit;
@@ -35,8 +35,8 @@
     cursor: pointer;
 }
 
-.NewProduct button:hover,
-.NewProduct button:active {
+.NewStudent button:hover,
+.NewStudent button:active {
     color: white;
     background-color: #fa923f;
 }

@@ -1,24 +1,25 @@
-
-import React from 'react';
+import React, {useState} from 'react';
 import '../Headers/Header.css'
 import Header from "../Headers/Header";
+import PageRoutes from "./PageRoutes";
+import {SelectedStudentsContext} from "../../context/SelectedStudents";
 
-export default function Dashboard() {
+function Dashboard() {
 
-
+    const [selectedStudents, setSelectedStudents] = useState([])
 
     return (
-        <React.Fragment>
-
-                <div className='header'>
-                    <Header />
+        <>
+            <div className='header'>
+                <Header/>
+            </div>
+            <SelectedStudentsContext.Provider value={{selectedStudents, setSelectedStudents}}>
+                <div>
+                    <PageRoutes/>
                 </div>
-                <div className="Product">
-                    {/* <PageRoutes /> */}
-                </div>
-
-        </React.Fragment>
-
+            </SelectedStudentsContext.Provider>
+        </>
     )
-
 }
+
+export default Dashboard
