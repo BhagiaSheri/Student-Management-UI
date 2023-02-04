@@ -1,6 +1,6 @@
 # Disclaimer
 
-The startup code was provided my MIU proessor Muhyidean for Exam Preparation.
+The startup code was provided by MIU proessor Muhyidean for WAA Exam Preparation.
 
 ## For Running the student management Backend clone the below repository:
 
