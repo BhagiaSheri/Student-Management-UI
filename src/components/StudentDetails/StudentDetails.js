@@ -12,9 +12,7 @@ function StudentDetails() {
     const params = useParams();
     const [studentDetailsState, setStudentDetailsState] = useState({})
     const studentId = params.id;
-    const [selectedStudentFlag, setSelectedStudentFlag] = useState(true)
     const {selectedStudents, setSelectedStudents} = useContext(SelectedStudentsContext);
-
 
     const fetchStudentById = () => {
         axios.get(`http://localhost:8080/api/v1/students/${studentId}`)
@@ -33,23 +31,26 @@ function StudentDetails() {
         deleteStudentById();
     }
 
+    const isAlreadySelected = () => {
+        if (selectedStudents.length === 0) return false
+        return selectedStudents.some(s => s.id === studentDetailsState.id)
+    }
+
     const handleSelectionOnClick = () => {
-        if (selectedStudentFlag) {
+        if (isAlreadySelected()) {
             setSelectedStudents(
-                [
-                    ...selectedStudents,
+                selectedStudents.filter(s => s.id !== studentDetailsState.id)
+            )
+        } else {
+            setSelectedStudents(
+                [...selectedStudents,
                     {
                         id: studentDetailsState.id,
                         name: studentDetailsState.name
                     }
                 ]
             )
-        } else {
-            setSelectedStudents(
-                selectedStudents.filter(s => s.id !== studentDetailsState.id)
-            )
         }
-        setSelectedStudentFlag(!selectedStudentFlag)
     }
 
     return (
@@ -62,7 +63,9 @@ function StudentDetails() {
                 <Courses/>
                 <button onClick={handleDeleteOnClick}>Delete</button>
                 <br/>
-                <button onClick={handleSelectionOnClick}>{selectedStudentFlag ? "Select" : "Unselect"}</button>
+                <button
+                    onClick={handleSelectionOnClick}>
+                    {isAlreadySelected() ? "Unselect" : "Select"}</button>
                 <br/>
                 <Link to="/students">Back</Link>
             </div>
