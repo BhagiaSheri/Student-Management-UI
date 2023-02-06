@@ -3,8 +3,6 @@
 The startup code was provided by MIU proessor Muhyidean for WAA Exam Preparation.
 
 ## For Running the student management Backend clone the below repository:
-
-Student management backend can be found on the below given repository:
 [https://github.com/muhyidean/SecondExam-Backend](https://github.com/muhyidean/SecondExam-Backend)
 
 ## For startup Frontend code clone the below repository:
